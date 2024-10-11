@@ -1,0 +1,503 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 90px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 48px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 1px #000, 3px 1px 0 #ff7777;
+}
+
+.search-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.search-btn {
+    background-color: white;
+    color: #d36666;
+    border: 1px solid #d36666;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 10px;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 16px;
+    color: #d36666;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.add-teacher-btn {
+    background-color: #fff;
+    color: #d36666;
+    border: 1px solid #d36666;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line {
+    border-top: 1px solid #000;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.devider {
+    height: 25px;
+    border-left: 2px dotted rgb(128, 128, 128);
+}
+
+.filters label {
+    font-size: 12px;
+    opacity: 50%;
+}
+
+.filters select, .filters input[type="checkbox"] {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.teachers-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1px;
+    row-gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.teacher-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+}
+
+.teacher-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #d36666;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(128, 128, 128);
+}
+
+.statistics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.statistics-table th,
+.statistics-table td {
+    padding: 12px 15px;
+    border: none;
+    text-align: center;
+}
+
+.statistics-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+    border: none !important;
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.statistics-table tr:nth-child(even) {
+    background-color: #fff3f3;
+}
+
+.statistics-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.statistics-table .line {
+    border-bottom: 2px solid #000;
+    border-top: none !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1px;
+    margin-bottom: 10px;
+}
+
+.pagination a, .pagination span {
+    text-decoration: none;
+    padding: 4px 8px;
+    color: #00a7a7;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 -1px;
+    font-size: 12px;
+}
+
+.pagination a:hover {
+    background-color: #00a7a7;
+    color: white;
+}
+
+.pagination a.active {
+    background-color: #00a7a7;
+    color: white;
+    border: 1px solid #00a7a7;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.carousel-slide {
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #d36666;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0 5px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #888;
+}
+
+.line {
+    border-top: 1px solid #000;
+    margin: 20px auto;
+    width: 40%;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 90px;
+    color: rgb(128, 128, 128);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: -10px;
+}
+
+.right-arrow {
+    right: -10px;
+}
+
+.arrow:hover {
+    color: black;
+}
+
+.text-blocks {
+    text-align: left;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.text-blocks p {
+    margin-bottom: 15px;
+}
+
+.nav-and-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.text-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.text-nav a {
+    font-size: 18px;
+    color: #d36666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-nav a:hover {
+    text-decoration: underline;
+}
+
+.add-teacher-section {
+    display: flex;
+}
+
+.add-teacher-btn {
+    background-color: #fff;
+    color: #d36666;
+    border: 2px solid #d36666;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-teacher-btn:hover {
+    background-color: #d36666;
+    color: white;
+}
+
+.info-section {
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-controls {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav {
+        flex-direction: column; /* Замість горизонтального розташування */
+    }
+
+    .nav-links {
+        justify-content: center; /* Центруємо навігаційні посилання */
+    }
+
+    .filters {
+        flex-direction: column; /* Фільтри йдуть один під одним */
+    }
+
+    .teachers-list {
+        grid-template-columns: repeat(1, 1fr); /* Наприклад, по 2 картки в ряд */
+        justify-items: center
+    }
+}
+#blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Щоб модальне вікно було поверх усього */
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Стиль для контенту в модальному вікні */
+.modal-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin: 5px 0;
+}
+
+.modal-content a {
+    color: #3498db;
+    text-decoration: none;
+}
+.modal-header {
+    background-color: #424242; /* Темний фон */
+    color: white; /* Білий текст */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стиль для кнопки закриття */
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: #ff7777;
+}
+.teacher-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px; /* Відстань між фото і текстом */
+}
+
+/* Стиль для фото викладача */
+.teacher-photo {
+    width: 250px; /* Квадратне фото */
+    height: 250px;
+    object-fit: cover; /* Забезпечує збереження пропорцій зображення */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Додаємо тінь для естетичного вигляду */
+    margin: 20px 20px 10px;
+}
+
+/* Контейнер для деталей */
+.teacher-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin-right: 1px;
+    align-items: flex-start;
+    line-height: 1.9;
+}
+.modal-body p {
+    text-align: left; /* Вирівнюємо текст по лівому краю */
+    margin-left: 20px;
+}
+.teacher-details a, .teacher-details p {
+    display: block; /* Забезпечує, щоб кожен елемент займав всю ширину */
+    text-align: left; /* Вирівнює всі елементи по лівому краю */
+    margin: 0; /* Встановлює відсутність відступів між елементами */
+}
+.toggle-link {
+    display: block; /* Забезпечує, що посилання займає всю ширину і вирівнюється по лівому краю */
+    color: #3498db; /* Колір тексту */
+    text-decoration: underline; /* Підкреслення */
+    font-size: 14px; /* Розмір шрифту */
+    margin-top: 10px; /* Відступ зверху */
+    text-align: left; /* Вирівнюємо текст по лівому краю */
+    margin-left: 20px;
+}
+
+.toggle-link:hover {
+    text-decoration: none; /* Забирає підкреслення при наведенні */
+    color: #2980b9; /* Зміна кольору при наведенні */
+
+}

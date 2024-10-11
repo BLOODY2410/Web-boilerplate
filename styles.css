@@ -1,0 +1,729 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 90px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 48px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 1px #000, 3px 1px 0 #ff7777;
+}
+
+.search-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.search-btn, .clear-filters-btn, .view-details-btn, .toggle-favorite-btn {
+    background-color: #fff;
+    color: #d36666;
+    border: 2px solid #d36666;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-btn:hover, .clear-filters-btn:hover, .view-details-btn:hover, .toggle-favorite-btn:hover {
+    background-color: #d36666;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 10px;
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 16px;
+    color: #d36666;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.add-teacher-btn {
+    background-color: #fff;
+    color: #d36666;
+    border: 2px solid #d36666;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-teacher-btn:hover {
+    background-color: #d36666;
+    color: white;
+}
+
+.line {
+    border-top: 1px solid #000;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.devider {
+    height: 25px;
+    border-left: 2px dotted rgb(128, 128, 128);
+}
+
+.filters label {
+    font-size: 12px;
+    opacity: 50%;
+}
+
+.filters select, .filters input[type="checkbox"] {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.teachers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-gap: 20px;
+    row-gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.teacher-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #d36666;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.teacher-card img:hover {
+    transform: scale(1.1); /* Збільшення зображення на 10% */
+    transition: transform 0.3s ease; /* Плавний перехід */
+}
+
+.teacher-card h3:hover {
+    color: #ff5555; /* Зміна кольору заголовку */
+    transition: color 0.3s ease; /* Плавний перехід кольору */
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(128, 128, 128);
+}
+
+.statistics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.statistics-table th,
+.statistics-table td {
+    padding: 12px 15px;
+    border: none;
+    text-align: center;
+}
+
+.statistics-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+    border: none !important;
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.statistics-table tr:nth-child(even) {
+    background-color: #fff3f3;
+}
+
+.statistics-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.statistics-table .line {
+    border-bottom: 2px solid #000;
+    border-top: none !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1px;
+    margin-bottom: 10px;
+}
+
+.pagination a, .pagination span {
+    text-decoration: none;
+    padding: 4px 8px;
+    color: #00a7a7;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 -1px;
+    font-size: 12px;
+}
+
+.pagination a:hover {
+    background-color: #00a7a7;
+    color: white;
+}
+
+.pagination a.active {
+    background-color: #00a7a7;
+    color: white;
+    border: 1px solid #00a7a7;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 25%; /* 25% ширини для 4 елементів */
+    box-sizing: border-box;
+    padding: 1px;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #d36666;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.carousel-item h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.carousel-item p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(128, 128, 128);
+}
+
+.arrow {
+    font-size: 40px;
+    color: rgb(128, 128, 128);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: color 0.3s ease;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.arrow:hover {
+    color: black;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0 5px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #888;
+}
+
+.line {
+    border-top: 1px solid #000;
+    margin: 20px auto;
+    width: 40%;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 90px;
+    color: rgb(128, 128, 128);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: -10px;
+}
+
+.right-arrow {
+    right: -10px;
+}
+
+.arrow:hover {
+    color: black;
+}
+
+.text-blocks {
+    text-align: left;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.text-blocks p {
+    margin-bottom: 15px;
+}
+
+.nav-and-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.text-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.text-nav a {
+    font-size: 18px;
+    color: #d36666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-nav a:hover {
+    text-decoration: underline;
+}
+
+.add-teacher-section {
+    display: flex;
+}
+
+.info-section {
+    margin: 20px 0;
+}
+
+/* Стилі для модального вікна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+.modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.modal-content p strong {
+    color: #d36666;
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.modal-content a {
+    color: #00a7a7;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+/* Додаткові стилі для кнопок */
+.view-details-btn, .toggle-favorite-btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Активні індикатори сортування */
+.statistics-table th.sorted-asc,
+.statistics-table th.sorted-desc {
+    background-color: #f0f0f0;
+    border-bottom: 2px solid #d36666;
+}
+
+/* Плавний перехід для сортування */
+.statistics-table th {
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Збільшення відступів та зміна шрифту для заголовків таблиці */
+.statistics-table th {
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Підсвічування заголовків при наведенні */
+.statistics-table th:hover {
+    background-color: #e0e0e0;
+}
+
+.statistics-table th {
+    cursor: pointer;
+}
+
+/* Контейнер списку викладачів */
+.teachers-list {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити картки на нові рядки */
+    gap: 16px; /* Відстань між картками */
+    justify-content: flex-start; /* Вирівнювання карток по лівому краю */
+}
+
+/* Картка викладача */
+.teacher-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: calc(25% - 16px); /* 4 картки на рядок з відстанню 16px */
+    box-sizing: border-box;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивність для різних розмірів екранів */
+@media (max-width: 1200px) {
+    .teacher-card {
+        width: calc(33.333% - 16px); /* 3 картки на рядок */
+    }
+}
+
+@media (max-width: 800px) {
+    .teacher-card {
+        width: calc(50% - 16px); /* 2 картки на рядок */
+    }
+}
+
+@media (max-width: 500px) {
+    .teacher-card {
+        width: 100%; /* 1 картка на рядок */
+    }
+}
+
+.teachers-list {
+    transition: all 0.3s ease;
+}
+
+.teacher-card {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.teacher-card.hidden {
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+/* Модальне вікно для додавання викладача */
+#add-teacher-modal {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed;
+    z-index: 1001; /* Вище за інші модалі */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Додає прокрутку, якщо необхідно */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+}
+
+/* Вміст модального вікна */
+#add-teacher-modal .modal-content {
+    background-color: #ffffff;
+    margin: 5% auto; /* Центрування */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Ширина модального вікна */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка закриття */
+#add-teacher-modal .close-add-teacher {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-teacher-modal .close-add-teacher:hover,
+#add-teacher-modal .close-add-teacher:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Стилі форми */
+#add-teacher-form .form-group {
+    margin-bottom: 15px;
+}
+
+#add-teacher-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#add-teacher-form input,
+#add-teacher-form select,
+#add-teacher-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-teacher-btn {
+    background-color: #d36666;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-teacher-btn:hover {
+    background-color: #b34747;
+}
+
+.delete-teacher-btn {
+    background-color: #fff;
+    color: #d36666;
+    border: 2px solid #d36666;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-teacher-btn:hover {
+    background-color: #d36666;
+    color: white;
+}
+
+
+/* Стилі для кнопки пагінації */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination-btn {
+    background-color: #d36666;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+    background-color: #b34747;
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.teacher-map {
+    width: 100%;
+    height: 150px; /* Ви можете змінити висоту за потреби */
+    margin-top: 10px;
+}
+
+.teacher-card {
+    position: relative; /* Додайте це, якщо ще немає */
+}
+
+/* Стилі для карти викладача у модальному вікні */
+.teacher-map {
+    width: 100%;
+    height: 300px; /* Можна налаштувати висоту за потреби */
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
