@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachinder</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+<div class="container" id="blur">
+    <header>
+        <div class="logo">
+            <h1>Teachinder</h1>
+        </div>
+        <div class="search-controls">
+            <input type="text" placeholder="Name, note or age to search" class="search-bar">
+            <button class="search-btn">Search</button>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="#">Teachers</a>
+            <a href="#">Statistics</a>
+            <a href="#">Favorites</a>
+            <a href="#">About</a>
+        </div>
+        <button class="add-teacher-btn">Add teacher</button>
+    </nav>
+    <div class="line"></div>
+
+    <h2>Top Teachers</h2>
+
+    <div class="filters">
+        <label for="age">Age</label>
+        <select id="age" name="age">
+            <option value="18-31">18-31</option>
+            <option value="32-45">32-45</option>
+            <option value="46-60">46-60</option>
+        </select>
+        <div class="devider"></div>
+
+        <label for="region">Region</label>
+        <select id="region" name="region">
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+            <option value="america">America</option>
+        </select>
+        <div class="devider"></div>
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <div class="devider"></div>
+
+        <label>
+            <input type="checkbox" name="photo" value="with-photo"> Only with photo
+        </label>
+        <div class="devider"></div>
+
+        <label>
+            <input type="checkbox" name="favorites" value="favorites"> Only favorites
+        </label>
+    </div>
+
+    <div class="teachers-list">
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+        <div class="teacher-card">
+            <img src="albert.jpg" alt="Albert Einstein">
+            <h3>Albert Einstein</h3>
+            <p>Physics</p>
+            <p>Germany</p>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <h2>Statistics</h2>
+    <table class="statistics-table">
+        <thead>
+        <tr class="line">
+            <th>Name</th>
+            <th>Speciality</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Daisy Alexander</td>
+            <td>Chemistry</td>
+            <td>28</td>
+            <td>Female</td>
+            <td>Vietnam</td>
+        </tr>
+        <tr>
+            <td>Daisy Alexander</td>
+            <td>Chemistry</td>
+            <td>28</td>
+            <td>Female</td>
+            <td>Vietnam</td>
+        </tr>
+        <tr>
+            <td>Daisy Alexander</td>
+            <td>Chemistry</td>
+            <td>28</td>
+            <td>Female</td>
+            <td>Vietnam</td>
+        </tr>
+        <tr>
+            <td>Daisy Alexander</td>
+            <td>Chemistry</td>
+            <td>28</td>
+            <td>Female</td>
+            <td>Vietnam</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <span>...</span>
+        <a href="#">Last</a>
+    </div>
+    <div class="line"></div>
+
+    <div class="carousel-container">
+        <div class="arrow left-arrow">&#10094;</div>
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="albert.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p>Ukraine</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="albert.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p>Ukraine</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="albert.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p>Ukraine</p>
+            </div>
+            <div class="carousel-slide">
+                <img src="albert.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p>Ukraine</p>
+            </div>
+
+        </div>
+        <div class="arrow right-arrow">&#10095;</div>
+    </div>
+    <div class="line"></div>
+
+    <section class="info-section">
+        <div class="text-blocks">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A atque facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic impedit iusto natus quaerat ratione sit? Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eligendi illum in inventore ipsum odio officiis omnis quisquam sed tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A atque esse expedita id iusto mollitia, odit sint ullam veritatis vero?</p>
+        </div>
+        <div class="nav-and-btn">
+            <nav class="text-nav">
+                <a href="#">Teachers</a>
+                <a href="#">Statistics</a>
+                <a href="#">Favorites</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="add-teacher-section">
+                <button class="add-teacher-btn">Add teacher</button>
+            </div>
+        </div>
+    </section>
+
+</div>
+<div class="centered-container">
+
+    <div class="form-header">
+        <h2>Add Teacher</h2>
+        <span class="close-btn">&times;</span>
+    </div>
+    <form class="add-teacher-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="Ukraine">Ukraine</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter city">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="birth-date">Date of birth</label>
+                <input type="date" id="birth-date" name="birth-date" placeholder="dd/mm/yyyy">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group sex-group">
+                <label for="sex">Sex</label>
+                <div class="sex-options-inline">
+                    <label>Male <input type="radio" name="sex" value="male"></label>
+                    <label>Female <input type="radio" name="sex" value="female"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <div class="form-row label-and-color-picker">
+                <label for="background-color">Background color</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="color" id="background-color" name="background-color">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Enter your notes"></textarea>
+            </div>
+        </div>
+
+        <button type="submit">Add</button>
+</body>
+</html>

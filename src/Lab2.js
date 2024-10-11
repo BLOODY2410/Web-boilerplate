@@ -62,6 +62,7 @@ function transformAndMergeUsers(randomUsers, additionalUsers) {
     }
   });
 
+
   return uniqueUsers;
 }
 

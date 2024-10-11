@@ -1,0 +1,207 @@
+    <!DOCTYPE html>
+    <html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teachinder</title>
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <!-- Ваш CSS-файл -->
+        <link rel="stylesheet" href="styles.css" />
+        <!-- Leaflet JavaScript -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </head>
+
+    <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Teachinder</h1>
+            </div>
+            <div class="search-controls">
+                <input type="text" placeholder="Name, note or age to search" class="search-bar">
+                <button class="search-btn">Search</button>
+                <button class="clear-filters-btn">Clear Filters</button>
+            </div>
+        </header>
+        <nav>
+            <div class="nav-links">
+                <a href="#teachers">Teachers</a>
+                <a href="#statistics">Statistics</a>
+                <a href="#favorites">Favorites</a>
+                <a href="#about">About</a>
+            </div>
+            <button type="button" class="add-teacher-btn">Add teacher</button>
+        </nav>
+        <div class="line"></div>
+
+        <h2 id="teachers">Top Teachers</h2>
+
+        <div class="filters">
+            <label for="age">Age</label>
+            <select id="age" name="age">
+                <option value="all">All</option>
+                <option value="18-31">18-31</option>
+                <option value="32-45">32-45</option>
+                <option value="46-60">46-60</option>
+            </select>
+            <div class="devider"></div>
+
+            <label for="region">Region</label>
+            <select id="region" name="region">
+                <option value="all">All</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+                <option value="america">America</option>
+            </select>
+            <div class="devider"></div>
+
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <div class="devider"></div>
+
+            <label>
+                <input type="checkbox" name="photo" value="with-photo"> Only with photo
+            </label>
+            <div class="devider"></div>
+
+            <label>
+                <input type="checkbox" name="favorites" value="favorites"> Only favorites
+            </label>
+        </div>
+
+        <div class="teachers-list" id="teacher-list">
+            <!-- Список викладачів буде вставлено динамічно за допомогою JS -->
+        </div>
+
+        <!-- Кнопка Next для пагінації -->
+        <div class="pagination-controls">
+            <button id="next-btn" class="pagination-btn">Next</button>
+        </div>
+
+        <div class="line"></div>
+
+        <h2 id="statistics">Statistics</h2>
+        <table class="statistics-table" id="statistics-table">
+            <thead>
+            <tr class="line">
+                <th data-sort="full_name">Name &#x25B2;&#x25BC;</th>
+                <th data-sort="course">Speciality &#x25B2;&#x25BC;</th>
+                <th data-sort="age">Age &#x25B2;&#x25BC;</th>
+                <th data-sort="b_date">Birth Date &#x25B2;&#x25BC;</th>
+                <th data-sort="country">Country &#x25B2;&#x25BC;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Список статистики буде вставлено динамічно за допомогою JS -->
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <!-- Динамічна пагінація буде створена за допомогою JS -->
+        </div>
+        <div class="line"></div>
+        <h2 id="favorites">Favorites</h2>
+        <div class="carousel-container">
+            <div class="arrow left-arrow">&#10094;</div>
+            <div class="carousel">
+                <div class="carousel-slide" id="favorites-carousel">
+                    <!-- Слайди будуть додані динамічно -->
+                </div>
+            </div>
+            <div class="arrow right-arrow">&#10095;</div>
+        </div>
+        <div class="line"></div>
+
+        <section class="info-section">
+            <div id="about" class="text-blocks">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A atque facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic impedit iusto natus quaerat ratione sit? Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eligendi illum in inventore ipsum odio officiis omnis quisquam sed tempora?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A atque esse expedita id iusto mollitia, odit sint ullam veritatis vero?</p>
+            </div>
+            <div class="nav-and-btn">
+                <nav class="text-nav">
+                    <a href="#teachers">Teachers</a>
+                    <a href="#statistics">Statistics</a>
+                    <a href="#favorites">Favorites</a>
+                    <a href="#about">About</a>
+                </nav>
+                <div class="add-teacher-section">
+                    <button class="add-teacher-btn">Add teacher</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Teacher Details Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="teacher-details">
+                <!-- Сюди будуть вставлені деталі викладача, включаючи карту -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Teacher Modal -->
+    <div id="add-teacher-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-teacher">&times;</span>
+            <form id="add-teacher-form">
+                <!-- Form Fields -->
+                <div class="form-group">
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State (optional):</label>
+                    <input type="text" id="state" name="state">
+                </div>
+                <div class="form-group">
+                    <label for="b_date">Birth Date:</label>
+                    <input type="date" id="b_date" name="b_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note:</label>
+                    <textarea id="note" name="note"></textarea>
+                </div>
+                <button type="submit" class="submit-teacher-btn">Add Teacher</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Додаємо скрипт Lab2.js -->
+    <script src="Lab2.js"></script>
+    </body>
+    </html>
