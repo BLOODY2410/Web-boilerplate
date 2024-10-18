@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="styles.css" />
         <!-- Leaflet JavaScript -->
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
     </head>
 
     <body>
@@ -22,6 +26,7 @@
                 <input type="text" placeholder="Name, note or age to search" class="search-bar">
                 <button class="search-btn">Search</button>
                 <button class="clear-filters-btn">Clear Filters</button>
+
             </div>
         </header>
         <nav>
@@ -86,25 +91,9 @@
         <div class="line"></div>
 
         <h2 id="statistics">Statistics</h2>
-        <table class="statistics-table" id="statistics-table">
-            <thead>
-            <tr class="line">
-                <th data-sort="full_name">Name &#x25B2;&#x25BC;</th>
-                <th data-sort="course">Speciality &#x25B2;&#x25BC;</th>
-                <th data-sort="age">Age &#x25B2;&#x25BC;</th>
-                <th data-sort="b_date">Birth Date &#x25B2;&#x25BC;</th>
-                <th data-sort="country">Country &#x25B2;&#x25BC;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Список статистики буде вставлено динамічно за допомогою JS -->
-            </tbody>
-        </table>
-
-        <div class="pagination">
-            <!-- Динамічна пагінація буде створена за допомогою JS -->
-        </div>
+        <canvas id="statistics-chart" width="600" height="600"></canvas>
         <div class="line"></div>
+
         <h2 id="favorites">Favorites</h2>
         <div class="carousel-container">
             <div class="arrow left-arrow">&#10094;</div>
